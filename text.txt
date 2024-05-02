@@ -1,3 +1,0 @@
-{id:"a", value:"A"},
-{id:"b", value:"B"},
-{id:"c", value:"C"}
