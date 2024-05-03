@@ -3,14 +3,14 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three-stdlib';
 import { OrbitControls } from 'three-stdlib';
 
-function ModelViewer({ modelPath }) {
+function ModelViewer({ modelPath,opacity }) {
   const mountRef = useRef(null);
 
   useEffect(() => {
     // Scene, Camera, Renderer 설정
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x808080);
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    scene.background = new THREE.Color(0xFFF2CC);
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(700, 500);
     mountRef.current.appendChild(renderer.domElement);
@@ -59,6 +59,31 @@ function ModelViewer({ modelPath }) {
       });
     }
 
+    //투명도 조정
+    function changeMaterialColorAndOpacity(scene, materialName, newColor, newOpacity) {
+      scene.traverse(function (child) {
+        if (child.isMesh) {
+          const material = child.material;
+          // Mesh가 여러 개의 매터리얼을 가지고 있는 경우 배열 확인
+          if (Array.isArray(material)) {
+            material.forEach((mat) => {
+              if (mat.name === materialName) {
+                mat.color.set(newColor);
+                mat.opacity = newOpacity;
+                mat.transparent = true; // 투명도를 적용하기 위해 필수
+              }
+            });
+          } else {
+            if (material.name === materialName) {
+              material.color.set(newColor);
+              material.opacity = newOpacity;
+              material.transparent = true; // 투명도를 적용하기 위해 필수
+            }
+          }
+        }
+      });
+    }
+
     // GLTF 모델 로딩
     const loader = new GLTFLoader();
     loader.load(modelPath, (gltf) => {
@@ -66,7 +91,7 @@ function ModelViewer({ modelPath }) {
       gltf.scene.traverse(function(child) {
         if (child.isMesh) {
           // 모든 메쉬의 머티리얼 색상을 회색으로 변경합니다.
-          child.material.color.set(0x404040);
+          
           
          
 
@@ -78,10 +103,15 @@ function ModelViewer({ modelPath }) {
         }
       });
       scene.add(gltf.scene);
-      changeMaterialColor(scene, 'switch_bottom.008', 0xFB6CFB);
+/*       changeMaterialColor(scene, 'switch_bottom.008', 0xFB6CFB);
       changeMaterialColor(scene, 'switch.010', 0xFFFFFF);
-      changeMaterialColor(scene, 'keycaps.011', 0xFB6CFB);
-      changeMaterialColor(scene, 'plate', 0x000000);
+      changeMaterialColor(scene, 'keycaps.011', 0xFB6CFB); */
+      changeMaterialColorAndOpacity(scene, 'plate', 0xFFFFFF,1);  //베어본
+      changeMaterialColorAndOpacity(scene, 'keycaps.011', 0xFFFFFF,1);  //키캡
+      changeMaterialColorAndOpacity(scene, 'switch_bottom.008', 0xFFFFFF,1);  //중앙키캡
+      changeMaterialColorAndOpacity(scene, 'switch.010', 0xFF1111,1); //스위치
+      
+     
 
       animate();
     });

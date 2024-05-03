@@ -42,7 +42,7 @@ const MainPage = () => {
               <div className="img">
               
               
-              <ModelViewer modelPath ="img/keyboard/scene.gltf"/>
+              <ModelViewer modelPath ="img/keyboard/scene.gltf" opacity="1"/>
                 </div>
               <div className="info">정보<br />
                 <label htmlFor="barebone">베어본 : </label> <br />
