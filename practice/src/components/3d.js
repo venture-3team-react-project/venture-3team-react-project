@@ -9,10 +9,10 @@ function ModelViewer({ modelPath }) {
   useEffect(() => {
     // Scene, Camera, Renderer 설정
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x808080);
+    scene.background = new THREE.Color(0xFFE4FB);
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(700, 500);
+    renderer.setSize(898, 640);
     mountRef.current.appendChild(renderer.domElement);
 
     // OrbitControls 설정
