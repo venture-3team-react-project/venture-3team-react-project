@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useState,useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { selectPartsType } from '../apis/PartsAPI';
 
 function SelectPart(){
 
@@ -7,6 +9,17 @@ function SelectPart(){
         {id:2, value:"플라스틱"},
         {id:3, value:"도자기"}
     ];
+
+    // const [searchParams] = useSearchParams();
+
+    // const partsType = searchParams.get('partsType');
+
+    // useEffect(
+    //     () => {
+    //         setPartType(selectPartsType(partsType));
+    //     },
+    //     [partsType]
+    // );
     
 
     const [partType,setPartType]=useState(housing); //eslint-disable-line no-unused-vars
@@ -20,6 +33,7 @@ function SelectPart(){
             id:e.target.id,
             value:e.target.value
         });
+        
     }
 
     const [part1, setPart1]=useState([ //eslint-disable-line no-unused-vars
@@ -44,14 +58,16 @@ function SelectPart(){
     
     const onChangeHandler2=(e)=>{
         setResultPart(e.target.value);
+        
+        
     }
 
     const selectPartType=()=>{
-       if(resultPartType.id===1){
+       if(resultPartType.id==1){
         return part1;
-       }else if(resultPartType.id===2){
+       }else if(resultPartType.id==2){
         return part2;
-       }else if(resultPartType.id===3){
+       }else if(resultPartType.id==3){
         return part3;
         }   
         return [];

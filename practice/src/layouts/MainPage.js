@@ -16,6 +16,14 @@ const MainPage = () => {
             <div className="selectOption">
               <SelectPart/>
             </div>
+
+            <div className="selectOption">
+              <SelectPart/>
+            </div>
+
+            <div className="selectOption">
+              <SelectPart/>
+            </div>
               
             </aside>
             <section>
