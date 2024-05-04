@@ -38,7 +38,6 @@
 </div>
 
 
-![ms](https://github.com/venture-3team-react-project/venture-3team-react-project/assets/105586878/3012fa1a-1643-4114-8f7a-5f2e8fffb64c)
 
 ### 🧑‍💻역할 분담
 
