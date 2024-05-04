@@ -1,12 +1,18 @@
 import React from 'react';
 import ModelViewer from '../components/3d';
 import './MainPage.css';
-import SelectBarebone from '../components/SelectParts/SelectBarebone.js';
-import SelectSwitch from '../components/SelectParts/SelectSwitch.js';
-import SelectKeycap from '../components/SelectParts/SelectKeycap.js';
-import { useState } from 'react';
 
 const MainPage = () => {
+
+  const [k_body, setK_keybody] = useState(false);
+  const [k_switch, setK_switch] = useState(false);
+  const [k_keycap, setK_keycap] = useState(false);
+  const [imgSel,setImgSel] = useState(false)
+
+
+
+
+ 
   const [barebone, setBarebone] = useState(''); // 베어본
   const handleBareboneSelect = (value) => {
       setBarebone(value);
