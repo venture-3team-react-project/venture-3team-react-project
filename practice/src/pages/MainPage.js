@@ -9,13 +9,38 @@ import { getProduct } from '../apis/ProductAPI';
 const MainPage = () => {
 
     /* 제품 설명 페이지 팝업*/
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedProductIndex, setSelectedProductIndex] = useState(null);
+  const [selectedProductType, setSelectedProductType] = useState(null);
   const products = getProduct();
 
-  const handlePopup = (productName) => {
-    const product = products.find((p) => p.name === productName);
-    setSelectedProduct(product);
+  const handlePopup = (productType) => {
+    setSelectedProductType(productType);
+    const index = products.findIndex((p) => p.partsType === productType);
+    setSelectedProductIndex(index);
   };
+
+  const handleNext = () => {
+    setSelectedProductIndex((prevIndex) => {
+      let nextIndex = (prevIndex + 1) % products.length;
+      while (products[nextIndex].partsType !== selectedProductType) {
+        nextIndex = (nextIndex + 1) % products.length;
+      }
+      return nextIndex;
+    });
+  };
+  
+  const handlePrev = () => {
+    setSelectedProductIndex((prevIndex) => {
+      let previousIndex = (prevIndex - 1 + products.length) % products.length;
+      while (products[previousIndex].partsType !== selectedProductType) {
+        previousIndex = (previousIndex - 1 + products.length) % products.length;
+      }
+      return previousIndex;
+    });
+  };
+
+  const selectedProduct = selectedProductIndex !== null ? products[selectedProductIndex] : null;
+
 
     return (
         <>
@@ -25,14 +50,19 @@ const MainPage = () => {
             <aside>
               <div className="sel">베어본<br />
                 <form action="">
-                  <input type="radio" value="알루" />알루
-                  <input type="radio" value="플라" />플라
+                 <input type="radio" value="알루미늄베어본" onChange={() => handlePopup("알루미늄베어본")} />알루미늄
+                <input type="radio" value="플라스틱베어본" onChange={() => handlePopup("플라스틱베어본")} />플라스틱
                   <br/>
                   {/* 제품 설명 페이지 팝업창 버튼 */}
-                  <button className='open' type="button" onClick={() => handlePopup("monsgeek M1W")}>알루 설명</button>
-                  <button className='open' type="button" onClick={() => handlePopup("gmk67")}>플라 설명</button>
-                  {selectedProduct && <Popup product={selectedProduct} onClose={() => setSelectedProduct(null)} />}
-                </form>
+                  <button className='open' type="button" onClick={() => handlePopup("알루미늄베어본")}>알루미늄</button>
+                  <button className='open' type="button" onClick={() => handlePopup("플라스틱베어본")}>플라스틱</button>
+                  {selectedProduct && (<Popup
+                  product={selectedProduct}
+                  onNext={handleNext}
+                  onPrev={handlePrev}
+                  onClose={() => setSelectedProductIndex(null)}/>)}
+               </form>
+               
 
               </div>
               <div className="sel">스위치<br />
