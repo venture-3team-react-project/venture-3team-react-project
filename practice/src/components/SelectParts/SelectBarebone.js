@@ -1,7 +1,12 @@
 import { useState,useEffect } from 'react';
 import { selectPartsType } from '../../apis/PartsAPI';
 
-function SelectPart({ onBareboneSelect }){
+function SelectPart({ onBareboneSelect,setBareboneColor,setBareboneImg }){
+
+
+    const [selectedColor, setSelectedColor] = useState('');
+
+    const [selectedImg, setSelectedImg] = useState('');
 
     const [partType,setPartType]=useState(selectPartsType("베어본")); //eslint-disable-line no-unused-vars
 
@@ -36,9 +41,35 @@ function SelectPart({ onBareboneSelect }){
     const onChangeHandler2=(e=>{
         setResultPart(e.target.value);
         onBareboneSelect(e.target.value);
-        console.log(e.target.value)
+      
+
+        const selectedColortOption = part.find(option => option.value === e.target.value);
+        if (selectedColortOption && selectedColortOption.color) {
+            setSelectedColor(selectedColortOption.color); // color 상태 업데이트
+        }
+    
+
+    const selectedImgOption = part.find(option => option.value === e.target.value);
+    if (selectedImgOption && selectedImgOption.imgsel) {
+        setSelectedImg(selectedImgOption.imgsel); // color 상태 업데이트
     }
+    setBareboneColor(selectedColortOption.color)
+    setBareboneImg(selectedImgOption.imgsel)
+
+
+    }
+
+    
     );
+    
+    useEffect(() => {
+       
+    }, [selectedColor]);
+
+    useEffect(() => {
+       
+    }, [selectedImg]);
+
     return(
         <>
             <div className="part">

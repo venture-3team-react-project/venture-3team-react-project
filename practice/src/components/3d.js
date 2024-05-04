@@ -6,6 +6,9 @@ import { OrbitControls } from 'three-stdlib';
 function ModelViewer({ modelPath,imgSel,bareBone,keySwitch,keyCap}) {
   const mountRef = useRef(null);
 
+
+ 
+
   useEffect(() => {
     // 기본설정
     const scene = new THREE.Scene();
@@ -59,6 +62,20 @@ function ModelViewer({ modelPath,imgSel,bareBone,keySwitch,keyCap}) {
       });
     }
 
+
+
+    function hexToDecimal(hexString) {
+      // 16진수 문자열에서 '#' 기호가 있다면 제거합니다.
+      hexString = hexString.replace(/^#/, '');
+    
+      // parseInt 함수를 사용하여 16진수 문자열을 10진수로 변환합니다.
+      const decimalValue = parseInt(hexString, 16);
+    
+      return decimalValue;
+    }
+
+
+
     //투명도 조정
     function changeMaterialColorAndOpacity(scene, materialName, newColor, newOpacity) {
       scene.traverse(function (child) {
@@ -105,8 +122,9 @@ function ModelViewer({ modelPath,imgSel,bareBone,keySwitch,keyCap}) {
 
 
       if(imgSel == 1){
-
-        changeMaterialColorAndOpacity(scene, 'plate', 0xFFFFFF,1);  //베어본
+        
+        
+        changeMaterialColorAndOpacity(scene, 'plate', hexToDecimal(bareBone),1);  //베어본
         changeMaterialColorAndOpacity(scene, 'keycaps.011', 0xFFFFFF,0);  //키캡
         changeMaterialColorAndOpacity(scene, 'switch_bottom.008', 0xFFFFFF,0);  //중앙키캡
         changeMaterialColorAndOpacity(scene, 'switch.010', 0xFF1111,0); //스위치 */
@@ -114,28 +132,32 @@ function ModelViewer({ modelPath,imgSel,bareBone,keySwitch,keyCap}) {
         }
   
         else if (imgSel == 2) {
+
+          console.log(keySwitch)
   
         changeMaterialColorAndOpacity(scene, 'plate', 0xFFFFFF,0);  //베어본
         changeMaterialColorAndOpacity(scene, 'keycaps.011', 0xFFFFFF,0);  //키캡
         changeMaterialColorAndOpacity(scene, 'switch_bottom.008', 0xFFFFFF,0);  //중앙키캡
-        changeMaterialColorAndOpacity(scene, 'switch.010', 0xFF1111,1); //스위치 */
+        changeMaterialColorAndOpacity(scene, 'switch.010', hexToDecimal(keySwitch),1); //스위치 */
         console.log(imgSel)
           
         } 
         else if (imgSel == 3){
+
+          console.log(keyCap)
   
         changeMaterialColorAndOpacity(scene, 'plate', 0xFFFFFF,0);  //베어본
-        changeMaterialColorAndOpacity(scene, 'keycaps.011', 0xFFFFFF,1);  //키캡
-        changeMaterialColorAndOpacity(scene, 'switch_bottom.008', 0xFFFFFF,1);  //중앙키캡
+        changeMaterialColorAndOpacity(scene, 'keycaps.011', hexToDecimal(keyCap),1);  //키캡
+        changeMaterialColorAndOpacity(scene, 'switch_bottom.008', hexToDecimal(keyCap),1);  //중앙키캡
         changeMaterialColorAndOpacity(scene, 'switch.010', 0xFF1111,0); //스위치 */
         console.log(imgSel)  
         }
 
         else if(imgSel == 5){
-          changeMaterialColorAndOpacity(scene, 'plate', 0xFFFFFF,1);  //베어본
-        changeMaterialColorAndOpacity(scene, 'keycaps.011', 0xFFFFFF,1);  //키캡
-        changeMaterialColorAndOpacity(scene, 'switch_bottom.008', 0xFFFFFF,1);  //중앙키캡
-        changeMaterialColorAndOpacity(scene, 'switch.010', 0xFF1111,1); //스위치 */
+          changeMaterialColorAndOpacity(scene, 'plate', hexToDecimal(bareBone),1);  //베어본
+        changeMaterialColorAndOpacity(scene, 'keycaps.011', hexToDecimal(keyCap),1);  //키캡
+        changeMaterialColorAndOpacity(scene, 'switch_bottom.008', hexToDecimal(keyCap),1);  //중앙키캡
+        changeMaterialColorAndOpacity(scene, 'switch.010', hexToDecimal(keySwitch),1); //스위치 */
 
         }
 
@@ -169,7 +191,7 @@ function ModelViewer({ modelPath,imgSel,bareBone,keySwitch,keyCap}) {
       mountRef.current.removeChild(renderer.domElement);
       controls.dispose();
     };
-  }, [modelPath,imgSel]);
+  }, [modelPath,imgSel,bareBone,keySwitch,keyCap]);
 
   return <div ref={mountRef} />;
 }

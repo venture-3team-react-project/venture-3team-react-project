@@ -5,17 +5,9 @@ import { useState } from 'react';
 import SelectBarebone from '../components/SelectParts/SelectBarebone';
 import SelectSwitch from '../components/SelectParts/SelectSwitch';
 import SelectKeycap from '../components/SelectParts/SelectKeycap';
-import { selectPartsType } from '../apis/PartsAPI';
+
 
 const MainPage = () => {
-
-  const [partType,setPartType]=useState(selectPartsType("베어본"));
-  console.log()
-
-  const [k_body, setK_keybody] = useState(false);
-  const [k_switch, setK_switch] = useState(false);
-  const [k_keycap, setK_keycap] = useState(false);
-  const [imgSel,setImgSel] = useState(false)
 
 
   const [barebone, setBarebone] = useState(''); // 베어본
@@ -33,6 +25,37 @@ const MainPage = () => {
       setKeycap(value);
   };
 
+  const [bareboneColor, setBareboneColor] = useState(''); // 베어본 색
+  const selectBareboneColor = (value) => {
+      setBareboneColor(value);
+  };
+
+  const [bareboneImg, setBareboneImg] = useState(''); // 베어본 이미지
+  const selectBareboneImg = (value) => {
+      setBareboneImg(value);
+  };
+
+
+  const [keySwitchColor, setKeySwitchColor] = useState(''); // 스위치 색
+  const selectKeySwitchColor = (value) => {
+      setKeySwitchColor(value);
+  };
+
+  const [keySwitchImg, setKeySwitchImg] = useState(''); // 스위치 이미지
+  const selectKeySwitchImg = (value) => {
+      setKeySwitchImg(value);
+  };
+
+  const [keyCapColor, setkeyCapColor] = useState(''); // 스위치 색
+  const selectkeyCapColor = (value) => {
+      setkeyCapColor(value);
+  };
+
+  const [keyCapImg, setkeyCapImg] = useState(''); // 스위치 이미지
+  const selectkeyCapImg = (value) => {
+      setkeyCapImg(value);
+  };
+
 
   
 
@@ -47,12 +70,17 @@ const MainPage = () => {
               <header>헤더입니다.</header>
 
               <div className="selectOption">
-                <SelectBarebone onBareboneSelect={handleBareboneSelect}/>
+                <SelectBarebone onBareboneSelect={handleBareboneSelect} setBareboneColor={selectBareboneColor} setBareboneImg={selectBareboneImg} />
 
    
-                <SelectSwitch onKeySwitchSelect={handlekeySwitchSelect}/>
+                <SelectSwitch onKeySwitchSelect={handlekeySwitchSelect} setKeySwtichColor={selectKeySwitchColor} setBareboneImg={selectBareboneImg}/>
  
-                <SelectKeycap onKeycapSelect={handlekeycapSelect}/>
+                <SelectKeycap onKeycapSelect={handlekeycapSelect} setKeycapColor={selectkeyCapColor} setBareboneImg={selectBareboneImg}/>
+
+                <button onClick={
+                 () =>{ setBareboneImg(5) }
+
+                }>조합하기</button>
        
               </div>
 
@@ -63,14 +91,15 @@ const MainPage = () => {
             </aside>
             <section>
               <div className="img">
-                <ModelViewer modelPath ="img/keyboard/scene.gltf"/>
+                <ModelViewer modelPath ="img/keyboard/scene.gltf" bareBone={bareboneColor} imgSel={bareboneImg} keyCap={keyCapColor} keySwitch={keySwitchColor}/>
               </div>
 
               <div className="info">선택하신 부품<br />
                 <label htmlFor="result-parts-label">베어본 : {barebone}</label> <br />
                 <label htmlFor="result-parts-label">스위치 : {keySwitch}</label> <br />
                 <label htmlFor="result-parts-label">키캡 :  {keycap}</label> <br />
-      
+               
+
                 
               </div>
           
