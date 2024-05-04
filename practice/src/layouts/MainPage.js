@@ -5,12 +5,11 @@ import SelectBarebone from '../components/SelectParts/SelectBarebone.js';
 import SelectSwitch from '../components/SelectParts/SelectSwitch.js';
 import SelectKeycap from '../components/SelectParts/SelectKeycap.js';
 
-
-
 const MainPage = () => {
     return (
         <>
         <div className="App">
+
           
           <main>
             <aside>
