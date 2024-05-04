@@ -3,16 +3,16 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three-stdlib';
 import { OrbitControls } from 'three-stdlib';
 
-function ModelViewer({ modelPath,opacity }) {
+function ModelViewer({ modelPath,imgSel }) {
   const mountRef = useRef(null);
 
   useEffect(() => {
-    // Scene, Camera, Renderer 설정
+    // 기본설정
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xFFF2CC);
-    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(700, 500);
+    scene.background = new THREE.Color(0xFFF2CC); //배경화면 색
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000); //카메라 위치
+    const renderer = new THREE.WebGLRenderer(); //렌더링 정보
+    renderer.setSize(700, 500); //이미지 크기
     mountRef.current.appendChild(renderer.domElement);
 
     // OrbitControls 설정
@@ -27,9 +27,9 @@ function ModelViewer({ modelPath,opacity }) {
     controls.zoomSpeed = 1.0; // 줌 속도 조절
 
     // 빛 및 모델 설정
-    const ambientLight = new THREE.AmbientLight(0xFFFFFF);
-    scene.add(ambientLight);
-
+    const ambientLight = new THREE.AmbientLight(0xFFFFFF);//대상을 비추는 조명 설정
+    scene.add(ambientLight);//빛 키기
+    //위에서 설정한 빛 비출 대상 선택
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(0, 1, 2);
     scene.add(directionalLight);
@@ -95,21 +95,60 @@ function ModelViewer({ modelPath,opacity }) {
           
          
 
-          // 머터리얼 요소의 속성을 확인하거나 수정할 수 있습니다.
-          // 예를 들면, 머터리얼의 이름이나 색상 등을 확인할 수 있습니다.
-          console.log(child.material.color); // 머터리얼의 색상을 출력
-          console.log(child.material.name); // 머터리얼의 이름을 출력
+          // 머터리얼 요소의 속성을 확인용
+          //console.log(child.material.color); // 콘솔에 색상찍기
+          //console.log(child.material.name); // 콘솔에 이름 찍기
           
         }
       });
       scene.add(gltf.scene);
-/*       changeMaterialColor(scene, 'switch_bottom.008', 0xFB6CFB);
+
+
+      if(imgSel == 1){
+
+        changeMaterialColorAndOpacity(scene, 'plate', 0xFFFFFF,1);  //베어본
+        changeMaterialColorAndOpacity(scene, 'keycaps.011', 0xFFFFFF,0);  //키캡
+        changeMaterialColorAndOpacity(scene, 'switch_bottom.008', 0xFFFFFF,0);  //중앙키캡
+        changeMaterialColorAndOpacity(scene, 'switch.010', 0xFF1111,0); //스위치 */
+        console.log(imgSel)
+        }
+  
+        else if (imgSel == 2) {
+  
+        changeMaterialColorAndOpacity(scene, 'plate', 0xFFFFFF,0);  //베어본
+        changeMaterialColorAndOpacity(scene, 'keycaps.011', 0xFFFFFF,0);  //키캡
+        changeMaterialColorAndOpacity(scene, 'switch_bottom.008', 0xFFFFFF,0);  //중앙키캡
+        changeMaterialColorAndOpacity(scene, 'switch.010', 0xFF1111,1); //스위치 */
+        console.log(imgSel)
+          
+        } 
+        else if (imgSel == 3){
+  
+        changeMaterialColorAndOpacity(scene, 'plate', 0xFFFFFF,0);  //베어본
+        changeMaterialColorAndOpacity(scene, 'keycaps.011', 0xFFFFFF,1);  //키캡
+        changeMaterialColorAndOpacity(scene, 'switch_bottom.008', 0xFFFFFF,1);  //중앙키캡
+        changeMaterialColorAndOpacity(scene, 'switch.010', 0xFF1111,0); //스위치 */
+        console.log(imgSel)  
+        }
+
+        else if(imgSel == 5){
+          changeMaterialColorAndOpacity(scene, 'plate', 0xFFFFFF,1);  //베어본
+        changeMaterialColorAndOpacity(scene, 'keycaps.011', 0xFFFFFF,1);  //키캡
+        changeMaterialColorAndOpacity(scene, 'switch_bottom.008', 0xFFFFFF,1);  //중앙키캡
+        changeMaterialColorAndOpacity(scene, 'switch.010', 0xFF1111,1); //스위치 */
+
+        }
+
+
+/*    
+      머터리얼 설명
+      changeMaterialColor(scene, 'switch_bottom.008', 0xFB6CFB);
       changeMaterialColor(scene, 'switch.010', 0xFFFFFF);
       changeMaterialColor(scene, 'keycaps.011', 0xFB6CFB); */
-      changeMaterialColorAndOpacity(scene, 'plate', 0xFFFFFF,1);  //베어본
+/*       changeMaterialColorAndOpacity(scene, 'plate', 0xFFFFFF,1);  //베어본
       changeMaterialColorAndOpacity(scene, 'keycaps.011', 0xFFFFFF,1);  //키캡
       changeMaterialColorAndOpacity(scene, 'switch_bottom.008', 0xFFFFFF,1);  //중앙키캡
-      changeMaterialColorAndOpacity(scene, 'switch.010', 0xFF1111,1); //스위치
+      changeMaterialColorAndOpacity(scene, 'switch.010', 0xFF1111,1); //스위치 */
       
      
 
@@ -130,7 +169,7 @@ function ModelViewer({ modelPath,opacity }) {
       mountRef.current.removeChild(renderer.domElement);
       controls.dispose();
     };
-  }, [modelPath]);
+  }, [modelPath,imgSel]);
 
   return <div ref={mountRef} />;
 }
