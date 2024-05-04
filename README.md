@@ -78,14 +78,14 @@
 
 - 기획하기 : NOTION, DISCORD
 - 코드 작성 : Visual Studio Code
-- 모든 과정에서 회의를 통해 다음 단계로 넘어가도록 했습니다.
-- 회의 과정에서 수정된 부분을 노션에 기록하고, 참고하며 개발했습니다.
+- 회의를 통해서 모든 단계 진행
+- 회의 과정에서 나온 내용들을 노션 기록 & 수정 사항 확인
 
 <br><br><br><br>
 ## 💻개발환경
 <br><br> 
 
-<p align="center"><img src="https://github.com/4teamDBorganization/passaggio/assets/105586878/4ae64f95-9d4d-42ad-b575-d48b2cc50f7f" height=400 width=600></p>
+<p align="center"><img src="" height=400 width=600></p>
 
 
 <br><br> 
