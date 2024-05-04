@@ -1,39 +1,34 @@
 import React, { useState } from 'react';
 import "./Product.css";
+import { getProduct } from '../apis/ProductAPI';
 
-const Popup = (props) => {
+const Popup = ({ product, onClose }) => {
 
-  const { onClose } = props;
-
-      return (
+    return (
         <div id="box">
 
             <div className="wrapper">
-              <header className='pdname'>
+              <header className='pdName'>
                 <h3>부품명</h3>
               </header>
 
               <main>
                 <div className="container">
 
-                  <div className="image">
-                    <img src="img/mango.jpg" alt="망고얌" />
+                  <div className="pdImage">
+                    <img src={ product.image } alt={ product.name}  />
                   </div>
 
                   <div className="product">
-                    <h4>[ 제품명 ]</h4>
+                    <h4>[ { product.name } ]</h4>
                     <h6>간단하게 특징</h6>
-                    <p>
-                      모시기 모시기 모시기 모시기
-                      모시기 모시기 모시기 모시기
-                      모시기 모시기 모시기 모시기
-                    </p>
+                    <p> { product.description } </p>
                   </div>
                 </div>
               </main>
 
               <div className="btnWrap">
-                <div className="btn" onClick={() => props.handlePopup() }>
+                <div className="btn" onClick={ onClose }>
                   <h6>닫기</h6>
                 </div>
               </div>

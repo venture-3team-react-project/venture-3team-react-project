@@ -1,0 +1,47 @@
+[
+    {
+        "code":1, 
+        "partsType":"알루미늄베어본",
+        "name":"monsgeek M1W", 
+        "description":"설명입니당",
+        "image": "/img/mango.jpg"
+    },
+    {
+        "code":2, 
+        "partsType":"알루미늄베어본",
+        "name":"sugar65", 
+        "description":"설명입니당",
+        "image": "/img/mango.jpg"
+    },
+    {
+        "code":3, 
+        "partsType":"알루미늄베어본",
+        "name":"a66", 
+        "description":"설명입니당",
+        "image": "/img/mango.jpg"
+    },
+    
+    {
+        "code":1, 
+        "partsType":"플라스틱베어본",
+        "name":"gmk67", 
+        "description":"설명입니당",
+        "image": "/img/mango.jpg"
+    },
+    {
+        "code":2, 
+        "partsType":"플라스틱베어본",
+        "name":"tiger80", 
+        "description":"설명입니당",
+        "image": "/img/mango.jpg"
+    },
+    {
+        "code":3, 
+        "partsType":"플라스틱베어본",
+        "name":"mk870", 
+        "description":"설명입니당",
+        "image": "/img/mango.jpg"
+    }
+
+
+  ]

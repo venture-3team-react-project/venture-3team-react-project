@@ -3,17 +3,19 @@ import { useState } from 'react';
 import ModelViewer from '../components/3d';
 import './MainPage.css';
 import Popup from './Product';
+import { getProduct } from '../apis/ProductAPI';
+
 
 const MainPage = () => {
 
-  /* 제품 설명 페이지 팝업*/
-  const [ popup, setPopup ] = useState(false); 
-  
-  const handlePopup = () => {
-    return (
-      setPopup(!popup)
-    );
-  }
+    /* 제품 설명 페이지 팝업*/
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const products = getProduct();
+
+  const handlePopup = (productName) => {
+    const product = products.find((p) => p.name === productName);
+    setSelectedProduct(product);
+  };
 
     return (
         <>
@@ -27,9 +29,9 @@ const MainPage = () => {
                   <input type="radio" value="플라" />플라
                   <br/>
                   {/* 제품 설명 페이지 팝업창 버튼 */}
-                  <button className='open' type="button" onClick={ handlePopup }>i</button>
-                  {popup? <Popup handlePopup={ handlePopup } /> : "" }
-
+                  <button className='open' type="button" onClick={() => handlePopup("monsgeek M1W")}>알루 설명</button>
+                  <button className='open' type="button" onClick={() => handlePopup("gmk67")}>플라 설명</button>
+                  {selectedProduct && <Popup product={selectedProduct} onClose={() => setSelectedProduct(null)} />}
                 </form>
 
               </div>

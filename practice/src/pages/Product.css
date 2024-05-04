@@ -31,7 +31,7 @@
     justify-content: center;
 }
 
-.pdname {
+.pdName {
     color: white;
     text-align: center;
     background: none;
@@ -56,11 +56,11 @@ h3{
     flex-direction: row;
 }
 
-.image {
+.pdImage {
     padding: 20px; 
 }
 
-.image img {
+.pdImage img {
     max-width: 100px;
     height: auto;
     display: block;
