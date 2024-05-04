@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three-stdlib';
 import { OrbitControls } from 'three-stdlib';
 
-function ModelViewer({ modelPath,imgSel }) {
+function ModelViewer({ modelPath,imgSel,bareBone,keySwitch,keyCap}) {
   const mountRef = useRef(null);
 
   useEffect(() => {

@@ -36,6 +36,7 @@ function SelectPart({ onBareboneSelect }){
     const onChangeHandler2=(e=>{
         setResultPart(e.target.value);
         onBareboneSelect(e.target.value);
+        console.log(e.target.value)
     }
     );
     return(

@@ -3,13 +3,13 @@
     {"id":"알루미늄", "value":"알루미늄", "partsType":"베어본"},
     {"id":"플라스틱", "value":"플라스틱", "partsType":"베어본"},
 
-    {"key":1, "value":"monsgeek M1W", "partsType":"알루미늄베어본"},
-    {"key":2, "value":"sugar65",  "partsType":"알루미늄베어본"},
-    {"key":3, "value":"a66", "partsType":"알루미늄베어본"},
+    {"key":1, "value":"monsgeek M1W", "partsType":"알루미늄베어본","color":"a1"},
+    {"key":2, "value":"sugar65",  "partsType":"알루미늄베어본","color":"1"},
+    {"key":3, "value":"a66", "partsType":"알루미늄베어본" ,"color":"1"},
 
-    {"key":1, "value":"gmk67", "partsType":"플라스틱베어본"},
-    {"key":2, "value":"tiger80", "partsType":"플라스틱베어본"},
-    {"key":3, "value":"mk870", "partsType":"플라스틱베어본"},
+    {"key":1, "value":"gmk67", "partsType":"플라스틱베어본","color":"1"},
+    {"key":2, "value":"tiger80", "partsType":"플라스틱베어본","color":"1"},
+    {"key":3, "value":"mk870", "partsType":"플라스틱베어본" ,"color":"1"},
 
 
 
@@ -18,17 +18,17 @@
     {"id":"넌클릭", "value":"넌클릭", "partsType":"스위치"},
     {"id":"리니어", "value":"리니어", "partsType":"스위치"},
 
-    {"key":1, "value":"오테뮤 청축", "partsType":"클릭스위치"},
-    {"key":2, "value":"카일박스 백축",  "partsType":"클릭스위치"},
-    {"key":3, "value":"체리 청축 ", "partsType":"클릭스위치"},
+    {"key":1, "value":"오테뮤 청축", "partsType":"클릭스위치" ,"color":"1"},
+    {"key":2, "value":"카일박스 백축",  "partsType":"클릭스위치" ,"color":"2"},
+    {"key":3, "value":"체리 청축 ", "partsType":"클릭스위치" ,"color":"3"},
 
-    {"key":1, "value":"체리 갈축", "partsType":"넌클릭스위치"},
-    {"key":2, "value":"오테뮤 라임축", "partsType":"넌클릭스위치"},
-    {"key":3, "value":"Gazzeu boba U4T", "partsType":"넌클릭스위치"},
+    {"key":1, "value":"체리 갈축", "partsType":"넌클릭스위치" ,"color":"11"},
+    {"key":2, "value":"오테뮤 라임축", "partsType":"넌클릭스위치" ,"color":"22"},
+    {"key":3, "value":"Gazzeu boba U4T", "partsType":"넌클릭스위치" ,"color":"33"},
 
-    {"key":1, "value":"아쿠아킹축", "partsType":"리니어스위치"},
-    {"key":2, "value":"바다소금축", "partsType":"리니어스위치"},
-    {"key":3, "value":"크스체 스위치", "partsType":"리니어스위치"},
+    {"key":1, "value":"아쿠아킹축", "partsType":"리니어스위치" ,"color":"111"},
+    {"key":2, "value":"바다소금축", "partsType":"리니어스위치" ,"color":"222"},
+    {"key":3, "value":"크스체 스위치", "partsType":"리니어스위치" ,"color":"333"},
 
 
 
@@ -37,12 +37,12 @@
     {"id":"ABS", "value":"ABS", "partsType":"키캡"},
     {"id":"PBT", "value":"PBT", "partsType":"키캡"},
 
-    {"key":1, "value":"enjoypbt", "partsType":"ABS키캡"},
-    {"key":2, "value":"gmk",  "partsType":"ABS키캡"},
-    {"key":3, "value":"B.FRIEND", "partsType":"ABS키캡"},
+    {"key":1, "value":"enjoypbt", "partsType":"ABS키캡" ,"color":"1"},
+    {"key":2, "value":"gmk",  "partsType":"ABS키캡" ,"color":"1"},
+    {"key":3, "value":"B.FRIEND", "partsType":"ABS키캡" ,"color":"1"},
 
-    {"key":1, "value":"PYHO", "partsType":"PBT키캡"},
-    {"key":2, "value":"MOUNTAIN", "partsType":"PBT키캡"},
-    {"key":3, "value":"프리미엄 PS 디자이너", "partsType":"PBT키캡"}
+    {"key":1, "value":"PYHO", "partsType":"PBT키캡" ,"color":"1"},
+    {"key":2, "value":"MOUNTAIN", "partsType":"PBT키캡" ,"color":"1"},
+    {"key":3, "value":"프리미엄 PS 디자이너", "partsType":"PBT키캡" ,"color":"1"}
 
 ]
