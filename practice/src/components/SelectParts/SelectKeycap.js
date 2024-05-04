@@ -12,7 +12,7 @@ function SelectPart(){
     const onChangeHandler1=(e)=>{
         setResultPartType({
             id:e.target.id,
-            value:e.target.value
+            value:e.target.value  
         });
         
     }
