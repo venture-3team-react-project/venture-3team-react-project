@@ -1,28 +1,9 @@
 import { useState,useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { selectPartsType } from '../apis/PartsAPI';
+import { selectPartsType } from '../../apis/PartsAPI';
 
 function SelectPart(){
 
-    const housing=[
-        {id:1, value:"알루미늄"},
-        {id:2, value:"플라스틱"},
-        {id:3, value:"도자기"}
-    ];
-
-    // const [searchParams] = useSearchParams();
-
-    // const partsType = searchParams.get('partsType');
-
-    // useEffect(
-    //     () => {
-    //         setPartType(selectPartsType(partsType));
-    //     },
-    //     [partsType]
-    // );
-    
-
-    const [partType,setPartType]=useState(housing); //eslint-disable-line no-unused-vars
+    const [partType,setPartType]=useState(selectPartsType("키캡")); //eslint-disable-line no-unused-vars
 
     const [resultPartType, setResultPartType]=useState(
         {id:'', value:''}
@@ -36,42 +17,25 @@ function SelectPart(){
         
     }
 
-    const [part1, setPart1]=useState([ //eslint-disable-line no-unused-vars
-        {key:1, value:"monsgeek M1W"},
-        {key:2, value:'sugar65'},
-        {key:3, value:'a66'}
-    ]);
-
-    const [part2, setPart2]=useState([//eslint-disable-line no-unused-vars
-        {key:1, value:"gmk67"},
-        {key:2, value:'tiger80 '},
-        {key:3, value:'mk870'}
-    ]);
-
-    const [part3, setPart3]=useState([//eslint-disable-line no-unused-vars
-        {key:1, value:"그런게"},
-        {key:2, value:'어디에'},
-        {key:3, value:'있어요'}
-    ]);
-
+    const [part,setPart]=useState([]);
+      
     const [resultPart, setResultPart]=useState();
+
+    useEffect(() => {
+        if (resultPartType.id == "ABS") {
+            setPart(selectPartsType("ABS키캡"));
+        } else if (resultPartType.id == "PBT") {
+            setPart(selectPartsType("PBT키캡"));
+        } else if (resultPartType.id == "") {
+            setPart(selectPartsType(""));
+        } else {
+            setPart([]); 
+        }
+    }, [resultPartType.id]);
     
     const onChangeHandler2=(e)=>{
         setResultPart(e.target.value);
-        
-        
     }
-
-    const selectPartType=()=>{
-       if(resultPartType.id==1){
-        return part1;
-       }else if(resultPartType.id==2){
-        return part2;
-       }else if(resultPartType.id==3){
-        return part3;
-        }   
-        return [];
-     }
 
     return(
         <>
@@ -97,7 +61,7 @@ function SelectPart(){
                 <br/>
             
                 <select className="DropBox" onChange={onChangeHandler2}>
-                    { selectPartType().map((option)=>(
+                    { part.map((option)=>(
                         <option
                             key={option.key}
                             value={option.value}

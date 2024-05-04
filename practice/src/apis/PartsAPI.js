@@ -5,5 +5,5 @@ export function getPartsList(){
 }
 
 export function selectPartsType(partsType){
-    return parts.filter(parts=>parts.partsType.match(partsType));
+    return parts.filter(parts=>parts.partsType===partsType);
 }
