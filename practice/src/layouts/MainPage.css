@@ -1,54 +1,75 @@
-body{
-  width: 80%;
-  margin: auto;
-  
+
+ /* *{
+    background-color: #FFE4FB;
+ } */
+
+ body{
+    width: 60%;
+    margin: auto;
   }
+
   header{
-  top: 0px;
-  width: 20%;
-  height: 100px;
-  background-color: black;
-  color: white;
+    width: 100%;
+    height: 100px;
+    background-color: #7F6BF5;
+    color: white;
   }
-  
+
+  .selectOption{
+    margin-top: 40px;
+    width: 100%;
+    background-color: #7F6BF5;
+    color: white;
+  }
+
+  .Radio, .DropBox, .SelectResult{
+    padding: 5px;
+    border: 1px solid black;
+  }
+
+  .DropBox{
+    background-color: #AFA4F0;
+    color :white
+
+  }
+   
   main{
       display: flex;
-      
   }
+  
   section{
-      top : -20px;
-      width: 80%;
-      height: 2000px;
+      top : -20px; 
+      height: 1000px;
+
       background-color: skyblue;
   }
   
   aside{
-  
-  width: 20%;
-  height: 2000px;
-  background-color: purple;
-  
+
+    width: 20%;
+    height: 1040px;
+    background-color: #AFA4F0;  
   }
   
   footer{
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  background-color: orange;
-  }
+    width: 1212px;
+    height: 100px;
+    background-color: #D9D9D9;
+ }
   
   
   .img{
-  width: 100%;
-  height: 70%;
-  background-color: aqua;
+    width: 100%;
+    height: 35%;
+    background-color: aqua;
   }
   
-  .info{
-  width: 100%;
-  height: 30%;
-  background-color: bisque;
-  
+ .info{
+    border: 20px solid #C8BEFF;
+    margin-top:350px ;
+    width: 918px;
+    height: 30%;
+    background-color: #D8D1FF; 
   }
   
   .sel{
@@ -58,3 +79,10 @@ body{
       background-color: aquamarine;
   }
 
+  canvas{
+    border: 30px  solid #D9D9D9;
+  }
+
+  .result-parts-label{
+    color:white;
+  }

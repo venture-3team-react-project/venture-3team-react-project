@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const {useState}=React;
+
+        function SelectPartType(){
+
+            const TextFileReader = () => {
+                const [fileContent, setFileContent] = useState('');
+
+                useEffect(() => {
+                    const fetchTextFile = async () => {
+                        try {
+                            const response = await fetch('./text.text'); 
+                            const text = await response.text();
+                            setFileContent(text); 
+                        } catch (error) {
+                            console.error('Error fetching text file:', error);
+                        }
+                    };
+
+                    fetchTextFile();
+                }, []); 
+                
+
+
+            }
+
+            const [partType,setPartType]=useState([
+                {id:"a", value:"A"},
+                {id:"b", value:"B"},
+                {id:"c", value:"C"}
+            ]);
+
+            const [resultPartType, setResultPartType]=useState();
+
+            const onChangeHandler=(e)=>{
+                setResultPartType(e.target.value);
+
+                console.log(resultPartType)
+                
+            }
+
+            const selectPartType=()=>{
+                return partType;
+            }
+
+            return(
+                <>
+                    {selectPartType().map(option=>
+                        <span key={option.id}>
+
+                            <input 
+                                id={option.id} 
+                                type="radio" 
+                                name="option" 
+                                value={option.value} 
+                                onChange={onChangeHandler}
+                            />
+
+                            <label htmlFor={option.id}>
+                                {option.value}
+                            </label>
+
+                        </span>
+                     )}  
+                </>
+
+            );
+        }
+    
+
+        function SelectPart(){
+
+            const [part, setPart]=useState([
+                {key:"a", value:"A"},
+                {key:'b', value:'B'},
+                {key:'c', value:'C'}
+            ]);
+
+
+            const [resultPart, setResultPart]=useState();
+            
+            const onChangeHandler=(e)=>{
+                    setResultPart(e.target.value);
+                    console.log(resultPart);
+            }
+
+            const selectPart=()=>{
+                return part;
+            }
+           
+            return(
+                <select onChange={onChangeHandler}>
+                        {selectPart().map((option)=>(
+                            <option
+                                key={option.key}
+                                value={option.value}
+                            >
+                                {option.value}
+                            </option>
+                        ))}
+                </select>
+            )
+        }
+
+        function App(){
+            return(
+                <>
+                    <SelectPartType/><br/>
+                    <SelectPart/>
+                </>
+            );
+        }
+
+        
+        ReactDOM.createRoot(document.getElementById('root')).render(
+            <App/>
+        );
+    </script>
+</body>
+</html>
