@@ -1,0 +1,149 @@
+.hd {
+   
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    color: #AFA4F0;
+    padding: 10px 20px; 
+    text-align: center;
+    border-radius: 5px;
+}
+
+body {
+    
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #afa4f0;
+    align-content: center;
+    border-radius: 30px;
+}
+
+table{
+     border-collapse : collapse; /*이중선 제거*/
+     display: flex;
+     text-align: center;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 40px;
+     } 
+ th,td{
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      border: 1px solid #fff;
+      
+      vertical-align: top;	
+      vertical-align: bottom;   
+      vertical-align: middle;  
+    }
+
+    #linediv {
+        margin-top: 25px;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 100px;
+        min-width: 90%;
+        min-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #fff;
+        border-radius: 5px;
+        flex-direction: column
+    }
+
+    .ft {
+        text-align: center;
+        position: fixed; /* 화면 하단 고정 */
+        bottom: 0; 
+        left: 0; 
+        width: 100%; 
+        min-height: 50px;
+        background-color: #fff;
+        color: #333;
+        padding: 10px 20px;
+    }
+
+    #info {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #sbs {
+       padding: 25px;
+        
+
+        width: 80%;
+        height: 500px;
+        border-radius: 10px;
+    }
+
+    #mainbox{
+        background-color: #F1EFFF;
+        min-width: 90%;
+        min-height: 350px;
+
+        margin-bottom: 250px;
+    }
+
+    .tbtop {
+        background-color: #F1EFFF;
+    }
+
+    li {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .litop {
+        margin-top: 35px;
+    }
+
+
+
+    .product-detail {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        height: 60%;
+        background-color: rgba(192, 192, 192, 0.8); /* 투명한 회색 배경색 */
+        border-radius: 10px;
+        overflow: auto; /* 내용이 넘칠 경우 스크롤 허용 */
+        z-index: 9999; /* 다른 요소 위에 띄우기 위한 z-index 설정 */
+      }
+      
+      .product-detail h2 {
+        margin-top: 20px;
+        text-align: center;
+      }
+      
+      .product-descriptions {
+        list-style-type: none;
+        padding-left: 20px;
+      }
+      
+      .product-descriptions li {
+        margin-bottom: 10px;
+      }
+      
+      .product-info {
+        margin-top: 20px;
+        text-align: center;
+      }
+      
+      .product-description {
+        margin-top: 20px;
+        padding: 0 20px;
+        text-align: justify;
+      }
+      
+      .product-description p {
+        margin-bottom: 20px;
+      }
+   
