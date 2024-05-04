@@ -1,45 +1,29 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import './ProductDetail.css';
+import { getProductInfo } from '../apis/api'; // API 파일 import
 
-const ProductDetail = () => {
-    // URL 파라미터에서 제품 ID와 옵션 추출
-    useParams();
-
+const ProductDetail = ({ productId }) => {
     // 부품 정보 상태 변수 선언
     const [partInfo, setPartInfo] = useState({
-        title: "부품 설명",
-        descriptions: [
-            "설명1",
-            "설명2",
-            "설명3",
-            "설명4",
-            "설명5",
-            "설명6",
-            "설명7"
-        ]
+        name: "",
+        description: "",
+        price: "",
+        image: "" // 이미지 경로 추가
     });
 
-    // ProductDetail의 표시 여부를 제어하는 상태 변수
-    const [showDetail] = useState(true);
-
-    // 페이지 초기화 함수
-    const initializePage = () => {
-        // React 상태를 업데이트하여 화면에 부품 정보를 표시
-        setPartInfo({
-            ...partInfo,
-            title: "부품 설명",
-            descriptions: [
-                "설명1",
-                "설명2",
-                "설명3",
-                "설명4",
-                "설명5",
-                "설명6",
-                "설명7"
-            ]
-        });
-    };
+    // 데이터 가져오기
+    useEffect(() => {
+        // id가 유효한지 확인하고 데이터 가져오기
+        if (productId) {
+            getProductInfo(productId)
+                .then(product => {
+                    setPartInfo(product);
+                })
+                .catch(error => {
+                    console.error("Error fetching product info:", error);
+                });
+        }
+    }, [productId]);
 
     // X 버튼 클릭 시 메인 화면으로 이동
     const handleClose = () => {
@@ -47,28 +31,15 @@ const ProductDetail = () => {
     };
 
     return (
-        <div className={`product-detail ${showDetail ? 'visible' : 'hidden'}`}>
+        <div className="product-detail">
             <button className="close-button" onClick={handleClose}>X</button>
-            <h2>{partInfo.title}</h2>
-            <ul className="product-descriptions">
-                {partInfo.descriptions.map((description, index) => (
-                    <li key={index}>{description}</li>
-                ))}
-            </ul>
-           
-            <div className="product-info">
-                {/* 선택된 제품 정보 표시 */}
-                <h3>제품명</h3>
-                <p>가격: 가격정보</p>
-                <p>옵션: 옵션정보</p>
-                <p>키캡: 키캡정보</p>
-            </div>
-            <div className="product-description">
-                {/* 제품 상세 설명 */}
-                <p>
-                    여기에 제품 상세 설명을 표시합니다.
-                </p>
-            </div>
+            <h1>{partInfo.name} 부품 설명</h1>
+            <img src={partInfo.image} alt={partInfo.name} /> {/* 이미지 표시 */}
+            <h4>{partInfo.name}이란?</h4>
+            <p>{partInfo.description}</p>
+            <br/><br/>
+            <p><b>고려 사항</b><hr></hr> {partInfo.description2}</p>
+            {/* 부품에 대한 추가 정보나 설명을 여기에 추가 */}
         </div>
     );
 };
