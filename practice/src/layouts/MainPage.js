@@ -1,6 +1,10 @@
 import React from 'react';
 import ModelViewer from '../components/3d';
 import './MainPage.css';
+import { useState } from 'react';
+import SelectPart from '../components/SelectParts/SelectBarebone';
+import SelectPart from '../components/SelectParts/SelectSwitch';
+import SelectPart from '../components/SelectParts/SelectKeycap';
 
 const MainPage = () => {
 
