@@ -73,7 +73,7 @@ function SelectPart({ onKeySwitchSelect,setKeySwtichColor,setBareboneImg }){
 
     return(
         <>
-            <div className="part"><button>설명</button>
+            <div className="part">
                 <div className="Radio">
                     {partType.map(option=>
                         <span key={option.id}>

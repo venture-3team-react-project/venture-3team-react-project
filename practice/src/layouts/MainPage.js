@@ -70,7 +70,6 @@ const MainPage = () => {
     setIsModalShowing(!isModalShowing);
   };
 
-
   
   
 
@@ -88,18 +87,18 @@ const MainPage = () => {
               <div id="portal-root"></div>
 
               <div className="sel">
-              <button className='mainbutton' onClick={() => handleProductClick(1)}>i</button>
+              <label>베어본 이란?</label><button className='mainbutton' onClick={() => handleProductClick(1)}>i</button>
               </div>
                 <SelectBarebone onBareboneSelect={handleBareboneSelect} setBareboneColor={selectBareboneColor} setBareboneImg={selectBareboneImg} />
               
                 <div className="sel">
-              <button className='mainbutton' onClick={() => handleProductClick(2)}>i</button>
+                <label>스위치 란?</label><button className='mainbutton' onClick={() => handleProductClick(2)}>i</button>
               </div>
                 <SelectSwitch onKeySwitchSelect={handlekeySwitchSelect} setKeySwtichColor={selectKeySwitchColor} setBareboneImg={selectBareboneImg}/>
                 <div className="sel">
-              <button className='mainbutton' onClick={() => handleProductClick(3)}>i</button>
+                <label>키캡 이란?</label><button className='mainbutton' onClick={() => handleProductClick(3)}>i</button>
               </div>
-                <SelectKeycap onKeycapSelect={handlekeycapSelect} setKeycapColor={selectkeyCapColor} setBareboneImg={selectBareboneImg}/>
+              <SelectKeycap onKeycapSelect={handlekeycapSelect} setKeycapColor={selectkeyCapColor} setBareboneImg={selectBareboneImg}/>
 
                 <button onClick={
                  () =>{ setBareboneImg(5) }
