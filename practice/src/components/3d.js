@@ -15,7 +15,7 @@ function ModelViewer({ modelPath,imgSel,bareBone,keySwitch,keyCap}) {
     scene.background = new THREE.Color(0xFFF2CC); //배경화면 색
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000); //카메라 위치
     const renderer = new THREE.WebGLRenderer(); //렌더링 정보
-    renderer.setSize(700, 500); //이미지 크기
+    renderer.setSize(898, 640); //이미지 크기
     mountRef.current.appendChild(renderer.domElement);
 
     // OrbitControls 설정

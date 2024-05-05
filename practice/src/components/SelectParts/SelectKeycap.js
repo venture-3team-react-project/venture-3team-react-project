@@ -93,8 +93,7 @@ function SelectPart({onKeycapSelect,setKeycapColor,setBareboneImg}){
                     )}
                 </div>
 
-                <br/>
-            
+              
                 <select className="DropBox" onChange={onChangeHandler2}>
                     { part.map((option)=>(
                         <option

@@ -81,26 +81,31 @@ const MainPage = () => {
           
           <main>
             <aside>
-              <header>헤더입니다.</header>
+              <div className="head">아이콘.</div>
 
               <div className="selectOption">
               <div id="portal-root"></div>
 
               <div className="sel">
-              <label>베어본 이란?</label><button className='mainbutton' onClick={() => handleProductClick(1)}>i</button>
+              <label>베어본</label><button className='mainbutton' onClick={() => handleProductClick(1)}>i</button>
               </div>
+              <div className="Select">
                 <SelectBarebone onBareboneSelect={handleBareboneSelect} setBareboneColor={selectBareboneColor} setBareboneImg={selectBareboneImg} />
-              
-                <div className="sel">
-                <label>스위치 란?</label><button className='mainbutton' onClick={() => handleProductClick(2)}>i</button>
               </div>
+                <div className="sel">
+                <label>스위치</label><button className='mainbutton' onClick={() => handleProductClick(2)}>i</button>
+              </div>
+              <div className="Select">
                 <SelectSwitch onKeySwitchSelect={handlekeySwitchSelect} setKeySwtichColor={selectKeySwitchColor} setBareboneImg={selectBareboneImg}/>
-                <div className="sel">
-                <label>키캡 이란?</label><button className='mainbutton' onClick={() => handleProductClick(3)}>i</button>
               </div>
-              <SelectKeycap onKeycapSelect={handlekeycapSelect} setKeycapColor={selectkeyCapColor} setBareboneImg={selectBareboneImg}/>
+                <div className="sel">
+                <label>&nbsp;&nbsp;&nbsp;키캡</label><button className='mainbutton' onClick={() => handleProductClick(3)}>i</button>
+              </div>
+              <div className="Select">
+                <SelectKeycap onKeycapSelect={handlekeycapSelect} setKeycapColor={selectkeyCapColor} setBareboneImg={selectBareboneImg}/>
+              </div>
 
-                <button onClick={
+                <button className='sumbutton' onClick={
                  () =>{ setBareboneImg(5) }
 
                 }>조합하기</button>
@@ -117,19 +122,15 @@ const MainPage = () => {
                 {bareboneImg && <ModelViewer modelPath ="img/keyboard/scene.gltf" bareBone={bareboneColor} imgSel={bareboneImg} keyCap={keyCapColor} keySwitch={keySwitchColor}/>}
               </div>
 
-              <div className="info">선택하신 부품<br />
-                <label htmlFor="result-parts-label">베어본 : {barebone}</label> <button>i</button><br />
-                <label htmlFor="result-parts-label">스위치 : {keySwitch}</label> <button>i</button><br />
-                <label htmlFor="result-parts-label">키캡 :  {keycap}</label>  <button>i</button><br />
-               
-
-                
+              <div className="info" style= {{fontSize:'20px'}}>선택하신 부품<br />
+                  <div className="result-parts-label">베어본</div> <label style={{marginRight:"10px"}}>{barebone}</label> <button className='mainbutton2'>i</button><br />
+                  <div className="result-parts-label">스위</div><label>{keySwitch}</label> <button className='mainbutton2'>i</button><br />
+                  <div className="result-parts-label">키캡</div> <label>{keycap}</label> <button className='mainbutton2'>i</button><br />
               </div>
               
               
             </section>
           </main>
-          <footer>푸터입니다.</footer>
         </div>
         <Modal isShowing={isModalShowing} hide={toggleModal}>
         {selectedProduct && <ProductDetail productId={selectedProduct} />}
