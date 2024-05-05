@@ -1,13 +1,22 @@
 import { useState,useEffect } from 'react';
 import { selectPartsType } from '../../apis/PartsAPI';
+import ProductDetail from '../ProductDetail'; // ProductDetail
 
-function SelectPart(){
+function SelectPart({ onBareboneSelect,setBareboneColor,setBareboneImg }){
+
+    const [selectedProduct, setSelectedProduct] = useState(null); // 선택된 제품 상태 변수
+
+
+    const [selectedColor, setSelectedColor] = useState('');
+
+    const [selectedImg, setSelectedImg] = useState('');
 
     const [partType,setPartType]=useState(selectPartsType("베어본")); //eslint-disable-line no-unused-vars
 
     const [resultPartType, setResultPartType]=useState(
         {id:'', value:''}
     );
+  
 
     const onChangeHandler1=(e)=>{
         setResultPartType({
@@ -35,11 +44,42 @@ function SelectPart(){
     
     const onChangeHandler2=(e)=>{
         setResultPart(e.target.value);
+        onBareboneSelect(e.target.value);
+      
+
+        const selectedColortOption = part.find(option => option.value === e.target.value);
+        if (selectedColortOption && selectedColortOption.color) {
+            setSelectedColor(selectedColortOption.color); // color 상태 업데이트
+        }
+    
+
+    const selectedImgOption = part.find(option => option.value === e.target.value);
+    if (selectedImgOption && selectedImgOption.imgsel) {
+        setSelectedImg(selectedImgOption.imgsel); // color 상태 업데이트
     }
+    setBareboneColor(selectedColortOption.color)
+    setBareboneImg(selectedImgOption.imgsel)
+
+
+    }
+
+    
+    
+    
+    useEffect(() => {
+       
+    }, [selectedColor]);
+
+    useEffect(() => {
+       
+    }, [selectedImg]);
 
     return(
         <>
             <div className="part">
+
+                
+           
                 <div className="Radio">
                     {partType.map(option=>
                         <span key={option.id}>
@@ -73,8 +113,12 @@ function SelectPart(){
 
                 <div className="SelectResult">
                     선택하신 베어본 <br/>{resultPartType.value} : {resultPart}
+                    
                 </div>
+
+                
             </div>
+
         </>
     );
 

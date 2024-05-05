@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Montserrat", sans-serif;
+}
+
+#box {
+    box-sizing: border-box;
+    display: flex;
+    width: 400px;
+    height: 300px;
+    background: none;
+    background-color: #AFA4F0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    position: fixed; 
+}
+
+.wrapper {
+    border: 3px solid white;
+    display: flex;
+    width: 350px;
+    height: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdName {
+    color: white;
+    text-align: center;
+    background: none;
+    align-items: center;
+    width: auto;
+}
+
+h3{
+    margin-bottom: 10px;
+}
+
+
+.container {
+    background-color: #e3dffb;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 300px;
+    height:200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
+}
+
+.pdImage {
+    padding: 20px; 
+}
+
+.pdImage img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+}
+
+.product {
+    display:block;
+    flex: 1;    
+    overflow-y: auto;
+    margin-right: 10px;
+}
+p {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+h4{
+    margin:0;
+}
+
+.btnWrap {
+    color: white;
+}
+.btn {
+    width: 40px;
+    height: 40px;
+}

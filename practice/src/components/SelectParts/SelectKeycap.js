@@ -1,7 +1,13 @@
 import { useState,useEffect } from 'react';
 import { selectPartsType } from '../../apis/PartsAPI';
 
-function SelectPart(){
+function SelectPart({onKeycapSelect,setKeycapColor,setBareboneImg}){
+
+    const [selectedColor, setSelectedColor] = useState('');
+
+    const [selectedImg, setSelectedImg] = useState('');
+
+    
 
     const [partType,setPartType]=useState(selectPartsType("키캡")); //eslint-disable-line no-unused-vars
 
@@ -35,7 +41,36 @@ function SelectPart(){
     
     const onChangeHandler2=(e)=>{
         setResultPart(e.target.value);
+        onKeycapSelect(e.target.value);
+
+
+        const selectedColortOption = part.find(option => option.value === e.target.value);
+        if (selectedColortOption && selectedColortOption.color) {
+            setSelectedColor(selectedColortOption.color); // color 상태 업데이트
+        }
+    
+
+    const selectedImgOption = part.find(option => option.value === e.target.value);
+    if (selectedImgOption && selectedImgOption.imgsel) {
+        setSelectedImg(selectedImgOption.imgsel); // color 상태 업데이트
     }
+    setKeycapColor(selectedColortOption.color)
+    setBareboneImg(selectedImgOption.imgsel)
+
+
+    }
+
+    
+
+    
+    useEffect(() => {
+       
+    }, [selectedColor]);
+
+    useEffect(() => {
+       
+    }, [selectedImg]);
+    
 
     return(
         <>
@@ -72,7 +107,7 @@ function SelectPart(){
                 </select>
 
                 <div className="SelectResult">
-                    선택하신 베어본 <br/>{resultPartType.value} : {resultPart}
+                    선택하신 키캡 <br/>{resultPartType.value} : {resultPart}
                 </div>
             </div>
         </>
