@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
 body{
     width: 100%;
     margin: auto;
@@ -13,6 +15,8 @@ body{
   
   .selectOption{
     margin-top: 1px;
+    
+    
 
   }
 
@@ -21,6 +25,7 @@ body{
     width: 100%;
     background-color: #AA9CFF;
     color: white;
+    font-family: "Jua", sans-serif;
    
   }
 
@@ -76,8 +81,10 @@ body{
       height: 50px;
       background-color: #7F6BF5;
       padding-left: 5%;
-      font-size: 12px;
+      font-size: 15px;
       line-height: 50px;
+      font-family: "Do Hyeon", sans-serif;
+      
      
 
   }
@@ -93,6 +100,7 @@ body{
     left: 10%;
     border: 0;
     font-size: 15px;
+    
   }
 
   .mainbutton:hover {
@@ -131,9 +139,6 @@ body{
 
   }
 
-  canvas{
-    
-  }
 
   .result-parts-label{
    
@@ -142,7 +147,7 @@ body{
     
     font-size: 20px;
     margin: 20px;
-   
+    font-family: "Jua", sans-serif;
     display: inline-block;
     
   }
@@ -173,10 +178,15 @@ body{
 
   }
 
+  option,select{
+    font-family: "Jua", sans-serif;
+  }
+
  
 
   footer span{
     margin-left: 20%;
     color: white;
+    font-family: "Jua", sans-serif;
 
   }
