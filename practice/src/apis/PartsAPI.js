@@ -7,3 +7,14 @@ export function getPartsList(){
 export function selectPartsType(partsType){
     return parts.filter(parts=>parts.partsType===partsType);
 }
+
+export function getItemInfo(itemValue){
+    return new Promise((resolve, reject) => {
+        const item = parts.find(item => item.value === itemValue);
+      if (item) {
+        resolve(item);
+      } else {
+        reject(new Error("Product not found"));
+      }
+    });
+  };

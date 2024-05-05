@@ -7,8 +7,10 @@ import SelectSwitch from '../components/SelectParts/SelectSwitch';
 import SelectKeycap from '../components/SelectParts/SelectKeycap';
 import ProductDetail from '../components/ProductDetail'; // ProductDetail 컴포넌트 import
 import Modal from '../components/modal';
+import Product from '../components/Product';
 import Header from './Header';
 import Footer from './Footer';
+import { getItemInfo } from '../apis/PartsAPI';
 
 
 const MainPage = () => {
@@ -72,6 +74,24 @@ const MainPage = () => {
     setIsModalShowing(!isModalShowing);
   };
 
+  const [selectedBarebone, setSelectedBarebone] = useState(null); // 선택된 베어본
+  const handleBareboneSelect2 = (itemValue) => {
+    setSelectedBarebone(itemValue);
+    toggleModal();
+  }
+
+  const [selectedKeySwitch, setSelectedKeySwitch] = useState(null); // 선택된 스위치
+  const handleKeySwitchSelect2 = (itemValue) => {
+    setSelectedKeySwitch(itemValue);
+    toggleModal();
+  }
+
+  const [selectedKeycap, setSelectedKeycap] = useState(null); // 선택된 키캡
+  const handleKeycapSelect2 = (itemValue) => {
+    setSelectedKeycap(itemValue);
+    toggleModal();
+  }
+
   
   
 
@@ -127,20 +147,31 @@ const MainPage = () => {
 
               <div className="info" style= {{fontSize:'20px'}}>
                   <div className="result-parts-label">베어본 :</div> <label style={{marginRight:"10px"}}>{barebone}</label> <button className='mainbutton2'>i</button><br />
+                  
+                  <button className='open' type="button" onClick={() => handleBareboneSelect2(barebone)}>i</button>   
+
                   <div className="result-parts-label">스위치 :</div><label>{keySwitch}</label> <button className='mainbutton2'>i</button><br />
+                  <button className='open' type="button" onClick={() => handleKeySwitchSelect2(keySwitch)}>i</button>
+
                   <div className="result-parts-label">키캡 :</div> <label>{keycap}</label> <button className='mainbutton2'>i</button><br />
+                  <button className='open' type="button" onClick={() => handleKeycapSelect2(keycap)}>i</button>
+              
               </div>
               
               
             </section>
           </main>
           <Footer/>
-        </div>
+          </div>
         <Modal isShowing={isModalShowing} hide={toggleModal}>
-        {selectedProduct && <ProductDetail productId={selectedProduct} />}
-      </Modal>
+          {selectedProduct && <ProductDetail productId={selectedProduct} />}  
 
+          {selectedBarebone && <Product itemValue={selectedBarebone} />}
 
+          {selectedKeySwitch && <Product itemValue={selectedKeySwitch} />}
+
+          {selectedKeycap && <Product itemValue={selectedKeycap} />}
+        </Modal>
         </>
       );
 };

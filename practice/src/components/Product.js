@@ -1,48 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Product.css";
-import { getProduct } from '../apis/ProductAPI';
+import { getItemInfo } from '../apis/PartsAPI';
 
-const Popup = ({ product, onNext, onPrev, onClose }) => {
+function Product({ itemValue } )   {
+
+  const [itemInfo, setItemInfo] = useState({
+    value: "",
+    description: "",
+    partsType: "",
+    imgsel: "" 
+});
+
+useEffect(() => {
+  if (itemValue) {
+    getItemInfo(itemValue)
+          .then(item => {
+            setItemInfo(item);
+          })
+          .catch(error => {
+              console.error("Error fetching product info:", error);
+          });
+  }
+}, [itemValue]);
 
     return (
         <div id="box">
 
             <div className="wrapper">
               <header className='pdName'>
-                <h3>{product.partsType}</h3>
+                <h3>{ itemInfo.value }</h3>
               </header>
 
               <main>
                 <div className="container">
 
                   <div className="pdImage">
-                    <img src={ product.image } alt={ product.name}  />
+                    <img src={ itemInfo.imgsel } alt={ itemInfo.value }  />
                   </div>
 
                   <div className="product">
-                    <h4>[ { product.name } ]</h4>
-                    <p> { product.description } </p>
+                    <h4>[ { itemInfo.partsType } ]</h4>
+                    <p> { itemInfo.description } </p>
                   </div>
                 </div>
               </main>
-
-              <div className="btnWrap">
-            <button className="btn" type="button" onClick={onPrev}>
-                <h6>이전</h6>
-            </button>
-            <button className="btn" type="button" onClick={onNext}>
-                <h6>다음</h6>
-            </button>
-            <button className="btn" type="button" onClick={onClose}>
-                <h6>닫기</h6>
-            </button> 
             </div>
-              
-        
 
-            </div>
         </div>
+            
   );
 };
 
-export default Popup;
+export default Product;
