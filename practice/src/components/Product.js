@@ -28,7 +28,7 @@ useEffect(() => {
 
             <div className="wrapper">
               <header className='pdName'>
-                <h3>{ itemInfo.value }</h3>
+                <h3>[ { itemInfo.value } ]</h3>
               </header>
 
               <main>
@@ -39,7 +39,7 @@ useEffect(() => {
                   </div>
 
                   <div className="product">
-                    <h4>[ { itemInfo.partsType } ]</h4>
+                    <h5>| Type | { itemInfo.partsType } </h5>
                     <p> { itemInfo.description } </p>
                   </div>
                 </div>
