@@ -32,7 +32,7 @@ function ProductDetail({ productId }){
 
     return(
         <div className="product-detail" id="aaa">
-            <button className="close-button" onClick={handleClose}>X</button>
+           
             <h1>{partInfo.name} 부품 설명</h1>
             <img src={partInfo.image} alt={partInfo.name} /> {/* 이미지 표시 */}
             <h4>{partInfo.name}이란?</h4>

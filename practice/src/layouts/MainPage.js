@@ -118,9 +118,9 @@ const MainPage = () => {
               </div>
 
               <div className="info">선택하신 부품<br />
-                <label htmlFor="result-parts-label">베어본 : {barebone}</label> <br />
-                <label htmlFor="result-parts-label">스위치 : {keySwitch}</label> <br />
-                <label htmlFor="result-parts-label">키캡 :  {keycap}</label> <br />
+                <label htmlFor="result-parts-label">베어본 : {barebone}</label> <button>i</button><br />
+                <label htmlFor="result-parts-label">스위치 : {keySwitch}</label> <button>i</button><br />
+                <label htmlFor="result-parts-label">키캡 :  {keycap}</label>  <button>i</button><br />
                
 
                 
