@@ -34,9 +34,7 @@ useEffect(() => {
               <main>
                 <div className="container">
 
-                  <div className="pdImage">
-                    <img src={ itemInfo.imgsel } alt={ itemInfo.value }  />
-                  </div>
+                
 
                   <div className="product">
                     <h5>| Type | { itemInfo.partsType } </h5>

@@ -32,17 +32,29 @@ function ProductDetail({ productId }){
 
     return(
         <div className="product-detail" id="aaa">
-           
-            <h1>{partInfo.name} 부품 설명</h1>
-            <img src={partInfo.image} alt={partInfo.name} /> {/* 이미지 표시 */}
-            <h4>{partInfo.name}이란?</h4>
-            <p>{partInfo.description}</p>
-            <br/><br/>
-            <p><b>고려 사항</b><hr></hr> {partInfo.description2}</p>
-            {/* 부품에 대한 추가 정보나 설명을 여기에 추가 */}
+            {/* <button className="close-button" onClick={handleClose}>X</button> */}
+            <h1 className="Dheader">{partInfo.name} 부품 설명</h1>
+            <div className='Ddivline'>
+                <img src={partInfo.image} alt={partInfo.name} /> {/* 이미지 표시 */}
+                <h4>{partInfo.name}이란?</h4>
+                {Array.isArray(partInfo.description) ? (
+                    partInfo.description.map((line, index) => (
+                        <p key={index}>{line}</p>
+                    ))
+                ) : (
+                    <p>{partInfo.description}</p>
+                )}
+                <br/><br/>
+                <b>고려 사항</b><hr></hr> 
+                {Array.isArray(partInfo.description2) ? (
+                    partInfo.description2.map((line, index) => (
+                        <p key={index}>{line}</p>
+                    ))
+                ) : (
+                    <p>{partInfo.description2}</p>
+                )}
+            </div>
         </div>
-      
-        
     );
 };
 
