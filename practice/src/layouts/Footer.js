@@ -1,7 +1,17 @@
+
 const Footer = () => {
     return(
         <>
-            <div>footer입니다.</div>
+            <footer>
+                <br/>
+                <br/>
+            <span>회사 정보</span><span>고객지원</span><span>사이트 맵</span><br/><br/>
+            <span>회사 정보</span><span>고객지원</span><span>사이트 맵</span>
+            <br/>
+            <br/>
+            <br/>
+            
+            </footer>
         </>
     );
 }

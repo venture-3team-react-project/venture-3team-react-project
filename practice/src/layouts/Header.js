@@ -1,7 +1,7 @@
 const Header = () => {
     return(
         <>
-            <div>헤더입니다.</div>
+            <header><img src="img/logo.png"/></header>
         </>
     );
 }
