@@ -110,7 +110,7 @@ function ModelViewer({ modelPath,imgSel,bareBone,keySwitch,keyCap}) {
           // 모든 메쉬의 머티리얼 색상을 회색으로 변경합니다.
           
           
-         
+            
 
           // 머터리얼 요소의 속성을 확인용
           //console.log(child.material.color); // 콘솔에 색상찍기

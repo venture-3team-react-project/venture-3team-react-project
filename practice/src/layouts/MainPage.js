@@ -5,6 +5,8 @@ import { useState } from 'react';
 import SelectBarebone from '../components/SelectParts/SelectBarebone';
 import SelectSwitch from '../components/SelectParts/SelectSwitch';
 import SelectKeycap from '../components/SelectParts/SelectKeycap';
+import ProductDetail from '../components/ProductDetail'; // ProductDetail 컴포넌트 import
+import Modal from '../components/modal';
 
 
 const MainPage = () => {
@@ -56,7 +58,20 @@ const MainPage = () => {
       setkeyCapImg(value);
   };
 
+  const [selectedProduct, setSelectedProduct] = useState(null); // 선택된 제품 상태 변수
+  const handleProductClick = (productId) => {
+      setSelectedProduct(productId);
+      toggleModal(); // 모달을 열기
+  };
 
+  const [isModalShowing, setIsModalShowing] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalShowing(!isModalShowing);
+  };
+
+
+  
   
 
     return (
@@ -70,11 +85,20 @@ const MainPage = () => {
               <header>헤더입니다.</header>
 
               <div className="selectOption">
-                <SelectBarebone onBareboneSelect={handleBareboneSelect} setBareboneColor={selectBareboneColor} setBareboneImg={selectBareboneImg} />
+              <div id="portal-root"></div>
 
-   
+              <div className="sel">
+              <button className='mainbutton' onClick={() => handleProductClick(1)}>i</button>
+              </div>
+                <SelectBarebone onBareboneSelect={handleBareboneSelect} setBareboneColor={selectBareboneColor} setBareboneImg={selectBareboneImg} />
+              
+                <div className="sel">
+              <button className='mainbutton' onClick={() => handleProductClick(2)}>i</button>
+              </div>
                 <SelectSwitch onKeySwitchSelect={handlekeySwitchSelect} setKeySwtichColor={selectKeySwitchColor} setBareboneImg={selectBareboneImg}/>
- 
+                <div className="sel">
+              <button className='mainbutton' onClick={() => handleProductClick(3)}>i</button>
+              </div>
                 <SelectKeycap onKeycapSelect={handlekeycapSelect} setKeycapColor={selectkeyCapColor} setBareboneImg={selectBareboneImg}/>
 
                 <button onClick={
@@ -91,7 +115,7 @@ const MainPage = () => {
             </aside>
             <section>
               <div className="img">
-                <ModelViewer modelPath ="img/keyboard/scene.gltf" bareBone={bareboneColor} imgSel={bareboneImg} keyCap={keyCapColor} keySwitch={keySwitchColor}/>
+                {bareboneImg && <ModelViewer modelPath ="img/keyboard/scene.gltf" bareBone={bareboneColor} imgSel={bareboneImg} keyCap={keyCapColor} keySwitch={keySwitchColor}/>}
               </div>
 
               <div className="info">선택하신 부품<br />
@@ -102,12 +126,15 @@ const MainPage = () => {
 
                 
               </div>
-          
+              
+              
             </section>
           </main>
           <footer>푸터입니다.</footer>
         </div>
-        
+        <Modal isShowing={isModalShowing} hide={toggleModal}>
+        {selectedProduct && <ProductDetail productId={selectedProduct} />}
+      </Modal>
         </>
       );
 };

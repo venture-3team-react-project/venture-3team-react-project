@@ -74,7 +74,7 @@ function SelectPart({onKeycapSelect,setKeycapColor,setBareboneImg}){
 
     return(
         <>
-            <div className="part">
+            <div className="part"> <button>설명</button>
                 <div className="Radio">
                     {partType.map(option=>
                         <span key={option.id}>

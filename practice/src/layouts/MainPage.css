@@ -75,7 +75,7 @@
   .sel{
       border: 1px white solid;
       width: 100%;
-      height: 100px;
+      height: 50px;
       background-color: aquamarine;
   }
 
@@ -86,3 +86,5 @@
   .result-parts-label{
     color:white;
   }
+
+

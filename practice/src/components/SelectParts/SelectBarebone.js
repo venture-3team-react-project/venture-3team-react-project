@@ -1,7 +1,10 @@
 import { useState,useEffect } from 'react';
 import { selectPartsType } from '../../apis/PartsAPI';
+import ProductDetail from '../ProductDetail'; // ProductDetail
 
 function SelectPart({ onBareboneSelect,setBareboneColor,setBareboneImg }){
+
+    const [selectedProduct, setSelectedProduct] = useState(null); // 선택된 제품 상태 변수
 
 
     const [selectedColor, setSelectedColor] = useState('');
@@ -13,6 +16,7 @@ function SelectPart({ onBareboneSelect,setBareboneColor,setBareboneImg }){
     const [resultPartType, setResultPartType]=useState(
         {id:'', value:''}
     );
+  
 
     const onChangeHandler1=(e)=>{
         setResultPartType({
@@ -38,7 +42,7 @@ function SelectPart({ onBareboneSelect,setBareboneColor,setBareboneImg }){
         }
     }, [resultPartType.id]);
     
-    const onChangeHandler2=(e=>{
+    const onChangeHandler2=(e)=>{
         setResultPart(e.target.value);
         onBareboneSelect(e.target.value);
       
@@ -60,7 +64,7 @@ function SelectPart({ onBareboneSelect,setBareboneColor,setBareboneImg }){
     }
 
     
-    );
+    
     
     useEffect(() => {
        
@@ -73,6 +77,9 @@ function SelectPart({ onBareboneSelect,setBareboneColor,setBareboneImg }){
     return(
         <>
             <div className="part">
+
+                
+           
                 <div className="Radio">
                     {partType.map(option=>
                         <span key={option.id}>
@@ -106,8 +113,12 @@ function SelectPart({ onBareboneSelect,setBareboneColor,setBareboneImg }){
 
                 <div className="SelectResult">
                     선택하신 베어본 <br/>{resultPartType.value} : {resultPart}
+                    
                 </div>
+
+                
             </div>
+
         </>
     );
 
