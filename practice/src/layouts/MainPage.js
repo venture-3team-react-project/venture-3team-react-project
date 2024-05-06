@@ -63,6 +63,7 @@ const MainPage = () => {
   };
 
   const [selectedProduct, setSelectedProduct] = useState(null); // 선택된 제품 상태 변수
+
   const handleProductClick = (productId) => {
       setSelectedProduct(productId);
       toggleModal(); // 모달을 열기
@@ -77,20 +78,37 @@ const MainPage = () => {
   const [selectedBarebone, setSelectedBarebone] = useState(null); // 선택된 베어본
   const handleBareboneSelect2 = (itemValue) => {
     setSelectedBarebone(itemValue);
-    toggleModal();
+    toggleBareboneModal();
   }
 
   const [selectedKeySwitch, setSelectedKeySwitch] = useState(null); // 선택된 스위치
   const handleKeySwitchSelect2 = (itemValue) => {
     setSelectedKeySwitch(itemValue);
-    toggleModal();
+    togglekeySwitchModal();
   }
 
   const [selectedKeycap, setSelectedKeycap] = useState(null); // 선택된 키캡
   const handleKeycapSelect2 = (itemValue) => {
     setSelectedKeycap(itemValue);
-    toggleModal();
+    toggleKeycapModal();
   }
+
+  const [isBareboneModalShowing, setIsBareboneModalShowing] = useState(false); //베어본 모달
+  const toggleBareboneModal = () => {
+    setIsBareboneModalShowing(!isBareboneModalShowing);
+  };
+
+  const [isKeySwitchModalShowing, setIsKeySwitchModalShowing] = useState(false);  //스위치 모달
+  const togglekeySwitchModal = () => {
+    setIsKeySwitchModalShowing(!isKeySwitchModalShowing);
+  };
+
+
+  const [isKeycapModalShowing, setIsKeycapModalShowing] = useState(false);  //키캡 모달
+  const toggleKeycapModal = () => {
+    setIsKeycapModalShowing(!isKeycapModalShowing);
+  };
+
 
   
   
@@ -146,16 +164,12 @@ const MainPage = () => {
               </div>
 
               <div className="info" style= {{fontSize:'20px'}}>
-                  <div className="result-parts-label">베어본 :</div> <label>{barebone}</label> <button className='mainbutton2' /* onClick={() => handleBareboneSelect2(barebone)} */>i</button><br />
-                  
-                
+                  <div className="result-parts-label">베어본 :</div> <label style={{marginRight:"10px"}}>{barebone}</label> <button className='mainbutton2' type="button" onClick={() => handleBareboneSelect2(barebone)}>i</button><br />
 
-                  <div className="result-parts-label">스위치 :</div><label>{keySwitch}</label> <button className='mainbutton2' /* onClick={() => handleKeySwitchSelect2(keySwitch)} */>i</button><br />
+                  <div className="result-parts-label">스위치 :</div><label>{keySwitch}</label> <button className='mainbutton2' type="button" onClick={() => handleKeySwitchSelect2(keySwitch)}>i</button><br />
                  
+                  <div className="result-parts-label">키캡 :</div> <label>{keycap}</label> <button className='mainbutton2'  type="button" onClick={() => handleKeycapSelect2(keycap)}>i</button><br />           
 
-                  <div className="result-parts-label">키캡 :</div> <label>{keycap}</label> <button className='mainbutton2' /* onClick={() => handleKeycapSelect2(keycap)} */>i</button><br />
-                  
-              
               </div>
               
               
@@ -163,15 +177,24 @@ const MainPage = () => {
           </main>
           <Footer/>
           </div>
+
         <Modal isShowing={isModalShowing} hide={toggleModal}>
-          {selectedProduct && <ProductDetail productId={selectedProduct} />}  
-
-      {/*     {selectedBarebone && <Product itemValue={selectedBarebone} />}
-
-          {selectedKeySwitch && <Product itemValue={selectedKeySwitch} />}
-
-          {selectedKeycap && <Product itemValue={selectedKeycap} />} */}
+          {selectedProduct && <ProductDetail productId={selectedProduct} />}
         </Modal>
+
+        <Modal isShowing={isBareboneModalShowing} hide={toggleBareboneModal}>
+          {selectedBarebone && <Product itemValue={selectedBarebone} />}
+       </Modal>
+
+
+       <Modal isShowing={isKeySwitchModalShowing} hide={togglekeySwitchModal}>
+          {selectedKeySwitch && <Product itemValue={selectedKeySwitch} />}
+       </Modal>
+
+       <Modal isShowing={isKeycapModalShowing} hide={toggleKeycapModal}>
+          {selectedKeycap && <Product itemValue={selectedKeycap} />}
+       </Modal>
+
         </>
       );
 };

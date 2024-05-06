@@ -28,18 +28,16 @@ useEffect(() => {
 
             <div className="wrapper">
               <header className='pdName'>
-                <h3>{ itemInfo.value }</h3>
+                <h3>[ { itemInfo.value } ]</h3>
               </header>
 
               <main>
                 <div className="container">
 
-                  <div className="pdImage">
-                    <img src={ itemInfo.imgsel } alt={ itemInfo.value }  />
-                  </div>
+                
 
                   <div className="product">
-                    <h4>[ { itemInfo.partsType } ]</h4>
+                    <h5>| Type | { itemInfo.partsType } </h5>
                     <p> { itemInfo.description } </p>
                   </div>
                 </div>

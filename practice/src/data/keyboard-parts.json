@@ -3,38 +3,44 @@
     {"id":"알루미늄", "value":"알루미늄", "partsType":"베어본"},
     {"id":"플라스틱", "value":"플라스틱", "partsType":"베어본"},
 
-    {"key":1, "value":"monsgeek M1W", "partsType":"알루미늄베어본","color":"0xFFFFFF" ,"imgsel":"../img/monsgeek.png", 
+    {"key":1, "value":"monsgeek M1W", "partsType":"알루미늄베어본","color":"0xFFFFFF" ,"imgsel":"1", 
+
         "description":
         ["[ 크기/무게 ] : 약 333*146*32.6mm | 약 1.75kg",
         "[ 연결방식 ] USB C타입 유선 / 2.4G 무선/ 블루투스",
         "[ LED 타입 ] RGB",
         "[ 핫스왑 ] 모든 스위치 핫스왑 지원"]},
-    {"key":2, "value":"sugar65",  "partsType":"알루미늄베어본","color":"0xFF1111" ,"imgsel":"../img/sugar65.jpg" , 
+    {"key":2, "value":"sugar65",  "partsType":"알루미늄베어본","color":"0xFF1111" ,"imgsel":"1" , 
+
         "description":
         ["[ 크기/무게 ] : 약 326*115*30mm | 약 1.4kg",
         "[ 연결방식 ] USB C타입 유선 / 2.4G 무선/ 블루투스",
         "[ 키보드 배열 ] 66키 + 노브 68% 배열",
         "[ 핫스왑 ] 풀 키 JWK 샤프트 시트 핫 스왑 지원"]},
-    {"key":3, "value":"a66", "partsType":"알루미늄베어본" ,"color":"0xF1C232" ,"imgsel":"../img/a66.jpg",
+    {"key":3, "value":"a66", "partsType":"알루미늄베어본" ,"color":"0xF1C232" ,"imgsel":"1",
+
         "description":
         ["[ 크기/무게 ] : 약 326*115*30mm | 약 1.4kg",
         "[ 연결방식 ] USB C타입 유선 / 2.4G 무선/ 블루투스",
         "[ 키보드 배열 ] 66키 + 노브 68% 배열",
         "[ 핫스왑 ] 모든 스위치 핫 스왑 지원"]},
 
-    {"key":1, "value":"gmk67", "partsType":"플라스틱베어본","color":"0xFFFFFF1" ,"imgsel":"../img/gmk67.jpg", 
+    {"key":1, "value":"gmk67", "partsType":"플라스틱베어본","color":"0xFFFFFF1" ,"imgsel":"1", 
+
         "description":
         ["[ 크기/무게 ] : 약 325*120*30mm | 약 1.2g",
         "[ 연결방식 ] USB C타입 유선 / 2.4G 무선/ 블루투스",
         "[ 키보드 배열 ] 67키 ",
         "[ LED 타입 ] 백라이트 RGB"]},
-    {"key":2, "value":"tiger80", "partsType":"플라스틱베어본","color":"0xFFFFFF","imgsel":"../img/tiger80.webp", 
+    {"key":2, "value":"tiger80", "partsType":"플라스틱베어본","color":"0xFFFFFF","imgsel":"1", 
+
         "description":
         ["[ 크기/무게 ] : 약 325*120*30mm | 약 1.2g",
         "[ 연결방식 ] USB C타입 유선 / 2.4G 무선/ 블루투스",
         "[ 키보드 배열 ] 67키 ",
         "[ LED 타입 ] RGB"]},
-    {"key":3, "value":"mk870", "partsType":"플라스틱베어본" ,"color":"0xFFFFFF" ,"imgsel":"../img/mk870.webp", 
+    {"key":3, "value":"mk870", "partsType":"플라스틱베어본" ,"color":"0xFFFFFF" ,"imgsel":"1", 
+
         "description":
         ["[ 크기/무게 ] : 약 364*143*36mm | 약 1.2g",
         "[ 연결방식 ] USB C타입 유선 / 2.4G 무선/ 블루투스",
@@ -48,34 +54,35 @@
     {"id":"넌클릭", "value":"넌클릭", "partsType":"스위치"},
     {"id":"리니어", "value":"리니어", "partsType":"스위치"},
 
-    {"key":1, "value":"오테뮤 청축", "partsType":"클릭스위치" ,"color":"0xFFFFFF" ,"imgsel":"../img/outemu.jpg", 
-        "description":["[ 동작 압력 ] 50GF", "클릭 타입의 스위치 방식으로 특유의 찰칵거리는 소리와 구분감이 강한 형태",
+    {"key":1, "value":"오테뮤 청축", "partsType":"클릭스위치" ,"color":"0xFFFFFF" ,"imgsel":"2", 
+        "description":["[ 동작 압력 ] 50 GF    ", "클릭 타입의 스위치 방식으로 특유의 찰칵거리는 소리와 구분감이 강한 형태",
         "경쾌한 타건감과 확실한 구분감을 원하는 사용자에게 적절한 스위치"]},
-    {"key":2, "value":"카일박스 백축",  "partsType":"클릭스위치" ,"color":"0xF1C232" ,"imgsel":"../img/카일.jpg",
-        "description":["[ 동작 압력 ] 45GF", "리니어 타입의 스위치 방식으로 키압이 낮고 소음이 적은 형태",
+    {"key":2, "value":"카일박스 백축",  "partsType":"클릭스위치" ,"color":"0xF1C232" ,"imgsel":"2",
+        "description":["[ 동작 압력 ] 45 GF", "리니어 타입의 스위치 방식으로 키압이 낮고 소음이 적은 형태",
         "손목에 부담이 가지 않지만 적은 반발력으로 키의 리스폰이 적은 스위치"]},
-    {"key":3, "value":"체리 청축 ", "partsType":"클릭스위치" ,"color":"0xF1C232" ,"imgsel":"../img/cherryblue.jpg", 
-        "description":["[ 동작 압력 ] 50GF", "넌클릭 타입의 스위치 방식으로 키 입력 시 가볍고 구분감이 살짝 있는 형태",
+    {"key":3, "value":"체리 청축 ", "partsType":"클릭스위치" ,"color":"0xF1C232" ,"imgsel":"2", 
+        "description":["[ 동작 압력 ] 50 GF", "넌클릭 타입의 스위치 방식으로 키 입력 시 가볍고 구분감이 살짝 있는 형태",
         "무난한 클릭 압력과 적절한 구분감을 원하는 사용자에게 적절한 스위치"]},
 
-    {"key":1, "value":"체리 갈축", "partsType":"넌클릭스위치" ,"color":"0xF1C232" ,"imgsel":"../img/cherry.jpg", 
-        "description":["[ 동작 압력 ] 50GF", "클릭 타입의 스위치 방식으로 특유의 찰칵거리는 소리와 구분감이 강한 형태",
+    {"key":1, "value":"체리 갈축", "partsType":"넌클릭스위치" ,"color":"0xF1C232" ,"imgsel":"2", 
+        "description":["[ 동작 압력 ] 50 GF", "클릭 타입의 스위치 방식으로 특유의 찰칵거리는 소리와 구분감이 강한 형태",
         "경쾌한 타건감과 확실한 구분감을 원하는 사용자에게 적절한 스위치"]},
-    {"key":2, "value":"오테뮤 라임축", "partsType":"넌클릭스위치" ,"color":"0xF1C232" ,"imgsel":"../img/outemulime.jpg", 
-        "description":["[ 동작 압력 ] 45GF", "클릭 타입의 스위치 방식으로 특유의 찰칵거리는 소리와 구분감이 강한 형태",
+    {"key":2, "value":"오테뮤 라임축", "partsType":"넌클릭스위치" ,"color":"0xF1C232" ,"imgsel":"2", 
+        "description":["[ 동작 압력 ] 45 GF", "클릭 타입의 스위치 방식으로 특유의 찰칵거리는 소리와 구분감이 강한 형태",
         "손목에 부담이 가지 않지만 적은 반발력으로 키의 리스폰이 적은 스위치"]},
-    {"key":3, "value":"Gazzeu boba U4T", "partsType":"넌클릭스위치" ,"color":"0xF1C232" ,"imgsel":"../img/gazzeu.jpg", 
-        "description":["[ 동작 압력 ] 50GF", "넌클릭 타입의 스위치 방식으로 키 입력 시 가볍고 구분감이 살짝 있는 형태",
+    {"key":3, "value":"Gazzeu boba U4T", "partsType":"넌클릭스위치" ,"color":"0xF1C232" ,"imgsel":"2", 
+        "description":["[ 동작 압력 ] 50 GF", "넌클릭 타입의 스위치 방식으로 키 입력 시 가볍고 구분감이 살짝 있는 형태",
         "무난한 클릭 압력과 적절한 구분감을 원하는 사용자에게 적절한 스위치"]},
 
-    {"key":1, "value":"아쿠아킹축", "partsType":"리니어스위치" ,"color":"0xF1C232" ,"imgsel":"../img/aqua.jpg", 
-        "description":["[ 동작 압력 ] 50GF", "클릭 타입의 스위치 방식으로 특유의 찰칵거리는 소리와 구분감이 강한 형태",
+    {"key":1, "value":"아쿠아킹축", "partsType":"리니어스위치" ,"color":"0xF1C232" ,"imgsel":"2", 
+        "description":["[ 동작 압력 ] 50 GF", "클릭 타입의 스위치 방식으로 특유의 찰칵거리는 소리와 구분감이 강한 형태",
         "경쾌한 타건감과 확실한 구분감을 원하는 사용자에게 적절한 스위치"]},
-    {"key":2, "value":"바다소금축", "partsType":"리니어스위치" ,"color":"0xF1C232" ,"imgsel":"../img/seasalt.jpg", 
-        "description":["[ 동작 압력 ] 40GF", "클릭 타입의 스위치 방식으로 특유의 찰칵거리는 소리와 구분감이 강한 형태",
+    {"key":2, "value":"바다소금축", "partsType":"리니어스위치" ,"color":"0xF1C232" ,"imgsel":"2", 
+        "description":["[ 동작 압력 ] 40 GF", "클릭 타입의 스위치 방식으로 특유의 찰칵거리는 소리와 구분감이 강한 형태",
         "손목에 부담이 가지 않지만 적은 반발력으로 키의 리스폰이 적은 스위치"]},
-    {"key":3, "value":"크스체 스위치", "partsType":"리니어스위치" ,"color":"0xF1C232" ,"imgsel":"../img/creamspacecherry.webp", 
-        "description":["[ 동작 압력 ] 50GF", "넌클릭 타입의 스위치 방식으로 키 입력 시 가볍고 구분감이 살짝 있는 형태",
+    {"key":3, "value":"크스체 스위치", "partsType":"리니어스위치" ,"color":"0xF1C232" ,"imgsel":"2", 
+        "description":["[ 동작 압력 ] 50 GF ", " 넌클릭 타입의 스위치 방식으로 키 입력 시 가볍고 구분감이 살짝 있는 형태",
+
         "무난한 클릭 압력과 적절한 구분감을 원하는 사용자에게 적절한 스위치"]},
 
 
@@ -85,35 +92,36 @@
     {"id":"ABS", "value":"ABS", "partsType":"키캡"},
     {"id":"PBT", "value":"PBT", "partsType":"키캡"},
 
-    {"key":1, "value":"enjoypbt", "partsType":"ABS키캡" ,"color":"0x56CCFF" ,"imgsel":"../img/enjoypbt.jpg", 
+    {"key":1, "value":"enjoypbt", "partsType":"ABS키캡" ,"color":"0x56CCFF" ,"imgsel":"3", 
         "description":
-        ["[ 프로필 ] 체리",
-        "[ 재질 ] ABS",
-        "[ 키 수 ] 87키 "]},
-    {"key":2, "value":"gmk",  "partsType":"ABS키캡" ,"color":"0xFF3434" ,"imgsel":"../img/gmk.jpg", 
+        ["[ 프 로 필 ] 체리 ",
+        " [ 재 질 ] ABS ",
+        " [ 키 수 ] 87키 "]},
+    {"key":2, "value":"gmk",  "partsType":"ABS키캡" ,"color":"0xFF3434" ,"imgsel":"3", 
         "description":
-        ["[ 프로필 ] 카일",
-        "[ 재질 ] ABS",
-        "[ 키 수 ] 173키 "]},
-    {"key":3, "value":"B.FRIEND", "partsType":"ABS키캡" ,"color":"0x211919" ,"imgsel":"../img/bfriend.webp", 
+        ["[ 프 로 필 ] 카일 ",
+        " [ 재 질 ] ABS ",
+        " [ 키 수 ] 173키 "]},
+    {"key":3, "value":"B.FRIEND", "partsType":"ABS키캡" ,"color":"0x211919" ,"imgsel":"3", 
        "description":
-       ["[ 프로필 ] Outemu",
-       "[ 재질 ] ABS",
-       "[ 키 수 ] 129키 "]},
+       ["[ 프 로 필 ] Outemu ",
+       " [ 재 질 ] ABS ",
+       " [ 키 수 ] 129키 "]},
 
-    {"key":1, "value":"PYHO", "partsType":"PBT키캡" ,"color":"0xD6D6D6" ,"imgsel":"../img/phyo.webp", 
+    {"key":1, "value":"PYHO", "partsType":"PBT키캡" ,"color":"0xD6D6D6" ,"imgsel":"3", 
         "description":
-        ["[ 프로필 ] TTC",
-        "[ 재질 ] 레트로 PBT",
-        "[ 키 수 ] 87키 "]},
-    {"key":2, "value":"MOUNTAIN", "partsType":"PBT키캡" ,"color":"0x11D000" ,"imgsel":"../img/mountain.webp", 
+        ["[ 프 로 필 ] TTC ",
+        " [ 재 질 ] 레트로 PBT ",
+        " [ 키 수 ] 87키 "]},
+    {"key":2, "value":"MOUNTAIN", "partsType":"PBT키캡" ,"color":"0x11D000" ,"imgsel":"3", 
         "description":
-        ["[ 프로필 ] Outemu",
-        "[ 재질 ] PBT",
-        "[ 키 수 ] 173키 "]},
-    {"key":3, "value":"프리미엄 PS 디자이너", "partsType":"PBT키캡" ,"color":"0x0011AB" ,"imgsel":"../img/pbdesigner.webp", 
+        ["[ 프 로 필 ] Outemu ",
+        " [ 재 질 ] PBT ",
+        " [ 키 수 ] 173키 "]},
+    {"key":3, "value":"프리미엄 PS 디자이너", "partsType":"PBT키캡" ,"color":"0x0011AB" ,"imgsel":"3", 
         "description":
-        ["[ 프로필 ] JWK",
-        "[ 재질 ] 레트로 PBT",
-        "[ 키 수 ] 129키 "]}
+        ["[ 프 로 필 ] J W K ",
+        " [ 재 질 ] 레트로 PBT ",
+        " [ 키 수 ] 129키 "]}
+
     ]
