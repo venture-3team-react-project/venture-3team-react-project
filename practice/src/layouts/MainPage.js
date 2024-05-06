@@ -169,6 +169,7 @@ const MainPage = () => {
                   <div className="result-parts-label">스위치 :</div><label>{keySwitch}</label> <button className='mainbutton2' type="button" onClick={() => handleKeySwitchSelect2(keySwitch)}>i</button><br />
                  
                   <div className="result-parts-label">키캡 :</div> <label>{keycap}</label> <button className='mainbutton2'  type="button" onClick={() => handleKeycapSelect2(keycap)}>i</button><br />           
+
               </div>
               
               
@@ -185,6 +186,7 @@ const MainPage = () => {
           {selectedBarebone && <Product itemValue={selectedBarebone} />}
        </Modal>
 
+
        <Modal isShowing={isKeySwitchModalShowing} hide={togglekeySwitchModal}>
           {selectedKeySwitch && <Product itemValue={selectedKeySwitch} />}
        </Modal>
@@ -192,6 +194,7 @@ const MainPage = () => {
        <Modal isShowing={isKeycapModalShowing} hide={toggleKeycapModal}>
           {selectedKeycap && <Product itemValue={selectedKeycap} />}
        </Modal>
+
         </>
       );
 };
